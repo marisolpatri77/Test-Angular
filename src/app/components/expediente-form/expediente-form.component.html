@@ -1,0 +1,22 @@
+<h3 class="mt-5"> GESTION DE EXPEDIENTES </h3>
+<form>
+    <div class="mb-3 mt-2">
+      <label for="numero" class="form-label">Numero</label>
+      <input type="number" class="form-control" id="numero" name="numero" [(ngModel)]="expediente.numero">
+    </div>
+    <div class="mb-3">
+      <label for="anio" class="form-label">Año</label>
+      <input type="number" class="form-control" id="anio" name="anio" [(ngModel)]="expediente.anio">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="expediente.descripcion">
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="archivado" name="archivado" [(ngModel)]="expediente.archivado">
+      <label class="form-check-label" for="archivado">Archivado</label>
+    </div>
+    <button *ngIf="accion =='new'" type="submit" class="btn btn-primary mb-2" (click)="registrar()">Agregar</button>
+    <button *ngIf="accion =='update'" type="submit" class="btn btn-primary mb-2" (click)="actualizar()">Actualizar</button>
+</form>
+<!-- clase ngModel: la vamos a usar para binder. Bindear para enlazar elementos html con variables de nuestro controlador  -->

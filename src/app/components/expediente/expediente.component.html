@@ -1,0 +1,26 @@
+<h3 class="mt-5"> LISTADO DE EXPEDIENTES </h3>
+<button type="button" class="btn btn-primary mb-2 mt-1" (click)="agregar()">AGREGAR</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numero</th>
+        <th scope="col">Año</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Archivado</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of expedientes">
+        <th>{{e.numero}}</th>
+        <td>{{e.anio}}</td>
+        <td>{{e.descripcion}}</td>
+        <td>{{e.archivado}}</td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="modificar(e._id)">MODIFICAR</button>
+          <button type="button" class="btn btn-danger ">ELIMINAR</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+  
